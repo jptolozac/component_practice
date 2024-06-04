@@ -1,23 +1,26 @@
-export function Child({ name, addMessage, setName }) {
-    const sendMessage = () => {
-        addMessage("Este mensaje es del hijo")
-    }
+import React from 'react'
 
-    const changeName = () => {
-        setName("Nuevo Nombre Hijo")
-    }
+export const Child = ({ name, setName, addMessage }) => {
 
-    return (
-        <div>
-            {name}
-            <div>
-                <button
-                    onClick={sendMessage}
-                >Enviar mensaje</button>
-                <button
-                    onClick={changeName}
-                >Enviar mensaje</button>
-            </div>
-        </div>
-    )
+  const sendMessage = () => {
+    addMessage("Este es el mensaje del HIJO");
+  }
+
+  const changeName = () => {
+    setName("Nuevo Nombre Hijo");
+  }
+
+  return (
+    <div>
+      {name}
+      <div>
+        <button
+          onClick={ sendMessage }
+          >
+          Enviar Mensaje
+        </button>
+        <button onClick={ changeName }>Cambiar Nombre</button>
+      </div>
+    </div>
+  )
 }

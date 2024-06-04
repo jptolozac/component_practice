@@ -1,35 +1,42 @@
-export function MyComponent(){
-    const name = "Inés";
-    const repository = "https://github.com/inesmariao/component-practice"
+import React from 'react'
 
-    const student = {
-        name: "Jean Paul",
-        lastName: "Toloza",
-        mobile: "321123",
-        linkedinProfile: "https://www.linkedin.com/in/jean-paul-toloza-cuellar-b20376237/"
-    }
-    
-    return (
-        <>
-            <hr />
-            <p>Primer Componente</p>
-            <h2>Temas de react</h2>
-            <ul>
-                <li>Componentes</li>
-                <li>Eventos</li>
-                <li>Estados - Hooks</li>
-                <li>Comunicacion</li>
-            </ul>
-            <hr />
-            <h2>Datos del docente</h2>
-            <p>Nombre: {name}</p>
-            <p>Repositorio: <br /> {repository}</p>
-            <hr />
-            <h2>Datos del estudiante</h2>
-            <p>Nombre: {student.name}</p>
-            <p>Apellido: {student.lastName}</p>
-            <p>Celular: {student.mobile}</p>
-            <p>Linkedin: <br /> {student.linkedinProfile}</p>
-        </>
-    )
+export const MyComponent = () => {
+  
+  const name = "Inés";
+  const repository = "https://github.com/inesmariao/component-practice";
+
+  const student = {
+    name: "Carlos",
+    lastName: "Caro",
+    mobile: "30000000",
+    linkedinProfile: "https://www.linkedin.com/in/carlos-caro"
+  }
+
+  console.log(student);
+
+  return (
+    <div>
+        <hr/>
+        <p>Este es mi Primer Componente</p>
+        <h2>Temas de React</h2>
+        <ul>
+            <li>Componentes</li>
+            <li>Eventos</li>
+            <li>Estados - Hooks</li>
+            <li>Comunicación</li>
+        </ul>
+        <hr />
+        <h2>Datos del Docente</h2>
+        <p>Nombre: { name }</p>
+        <p>Repositorio:</p>
+        <p>{ repository }</p>
+        <hr />
+        <h2>Datos del estudiante</h2>
+        <p>Nombre: { student.name }</p>
+        <p>Apellido: { student.lastName }</p>
+        <p>Celular: { student.mobile }</p>
+        <p>Perfil de LinkedIn:</p>
+        <p>{ student.linkedinProfile }</p>
+    </div>
+  )
 }

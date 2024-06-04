@@ -1,12 +1,23 @@
-export function ThirdComponent({ allergies, bloodGroup, height, ...props }){
-    return (
-        <div>
-            <h2>Comunicacion entre componentes</h2>
-            <ul>
-                <li>Alergias: {allergies}</li>
-                <li>Grupo sanguineo: {bloodGroup}</li>
-                <li>Peso: {height}</li>
-            </ul>
-        </div>
-    )
+import React from 'react'
+import PropTypes from 'prop-types'
+
+export const ThirdComponent = ({ name, lastName, card }) => {
+
+  return (
+    <div>
+        <h2>Comunicación entre Componentes</h2>
+        <ul>
+            <li>{ name }</li>
+            <li>{ lastName }</li>
+            <li>{ card.height }</li>
+        </ul>
+    </div>
+  )
 }
+
+ThirdComponent.propTypes = {
+  name: PropTypes.string,
+  lastName: PropTypes.string,
+  card: PropTypes.object
+}
+

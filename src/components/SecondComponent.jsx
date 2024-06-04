@@ -1,4 +1,6 @@
-export function SecondComponent(){
+import React from 'react'
+
+export const SecondComponent = () => {
     const books = [
         "Harry Potter y la piedra filosofal",
         "Harry Potter y la cámara secreta",
@@ -8,15 +10,22 @@ export function SecondComponent(){
         "Harry Potter y el misterio del príncipe",
         "Harry Potter y las Reliquias de la Muerte"
     ];
-    // const books = []
 
-    return (
+    //const books = [];
+
+  return (
+    <div>
+        <h2>Listado de libros</h2>
         <ul>
-            {books.length > 0 && 
-                books.map((book, idx) => (
-                    <li key={idx}>{book}</li>
-                ))
+            {
+                books.length >= 1 ?
+                (
+                        books.map((book, index) => {
+                            return <li key={index}>{book}</li>
+                        })
+                ) : "No existen libros."
             }
         </ul>
-    )
+    </div>
+  )
 }

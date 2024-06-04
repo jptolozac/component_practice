@@ -3,15 +3,24 @@ import './App.css';
 import { MyComponent } from './components/MyComponent';
 import { SecondComponent } from './components/SecondComponent';
 import { ThirdComponent } from './components/ThirdComponent';
-import { useState } from 'react';
 import { Child } from './components/Child';
+import { useState } from 'react';
+import { FourthComponent } from './components/FourthComponent';
 
 function App() {
-  const [name, setName] = useState("Lina")
-  const [message, setMessage] = useState()
+
+  const [name, setName] = useState("Lina");
+  const [message, setMessage] = useState("");
 
   const addMessage = (message) => {
     console.log(message);
+    setMessage(message);
+  }
+
+  const medicalRecord = {
+    height: "160",
+    bloodGroup: "RhO+",
+    allergies: "None"
   }
 
   return (
@@ -21,21 +30,27 @@ function App() {
         <p>
           Estructura inicial del proyecto y limpia.
         </p>
-        <Child
-          name={name}
-          addMessage={addMessage}
-          setName={setName}
-        />
-        <MyComponent />
+        <div>
+          <hr />
+          <FourthComponent />
+          <hr />
+        </div>
+        <h2>Mensaje del hijo: </h2>
+        <p>{ message }</p>
+        <Child name={name} setName={setName} addMessage={addMessage}/>
         <SecondComponent />
         <ThirdComponent
-          allergies="mata"
-          bloodGroup="O+"
-          height={85}
+          name="Inés"
+          lastName="Oliveros"
+          card={medicalRecord}
         />
+        <MyComponent />
       </header>
     </div>
   );
 }
 
 export default App;
+
+
+
